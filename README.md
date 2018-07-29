@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# サンプル LINE bot
+* 友達追加のQR コード
+<img width="168" alt="2018-07-29 13 23 32" src="https://user-images.githubusercontent.com/26855887/43362953-a7d77524-9332-11e8-9151-3d051ecceac8.png">
