@@ -24,4 +24,6 @@ module LinebotHelper
       resText = '案ずるでない。気にせず行け。'
     end
     return resText
+  end
+  
 end
