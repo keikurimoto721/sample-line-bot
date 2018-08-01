@@ -1,4 +1,10 @@
 module LinebotHelper
+  require 'line/bot'  # gem 'line-bot-api'
+
+  require 'open-uri'
+  require 'kconv'
+  require 'rexml/document'
+
   def createText
   	url  = "https://www.drk7.jp/weather/xml/13.xml"
     xml  = open( url ).read.toutf8
