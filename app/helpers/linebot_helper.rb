@@ -11,7 +11,6 @@ module LinebotHelper
     doc = REXML::Document.new(xml)
     xpath = 'weatherforecast/pref/area[4]/'
 
-    # 当日朝のメッセージの送信の下限値は20％としているが、明日・明後日雨が降るかどうかの下限値は30％としている
     min_per = 30
   
     per06to12 = doc.elements[xpath + 'info/rainfallchance/period[2]l'].text
@@ -25,5 +24,5 @@ module LinebotHelper
     end
     return resText
   end
-  
+
 end
