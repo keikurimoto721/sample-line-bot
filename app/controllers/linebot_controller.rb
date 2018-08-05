@@ -40,6 +40,8 @@ class LinebotController < ApplicationController
             text: push
           }
           client.reply_message(event['replyToken'], message)
+          user_id = ENV['MY_USER_ID']
+          client.push_message(user_id, message)
         end
       end
     }
