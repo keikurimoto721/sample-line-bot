@@ -41,7 +41,8 @@ class LinebotController < ApplicationController
           }
           client.reply_message(event['replyToken'], message)
           user_id = ENV['MY_USER_ID']
-          client.push_message(user_id, message)
+          p user_id
+          #client.push_message(user_id, message)
         end
       end
     }
