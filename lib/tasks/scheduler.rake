@@ -9,7 +9,7 @@ task :update_feed => :environment do
     config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
     config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
   }
-=begin
+
   # 使用したxmlデータ（毎日朝6時更新）：以下URLを入力すれば見ることができます。
   url  = 'https://www.drk7.jp/weather/xml/13.xml'
 
@@ -52,14 +52,14 @@ task :update_feed => :environment do
 
     # 発信するメッセージの設定
     push = "#{word1}\n#{word3}\n降水確率はこんな感じだよ。\n　  6〜12時　#{per06to12}％\n　12〜18時　 #{per12to18}％\n　18〜24時　#{per18to24}％\n#{word2}"
-=end
+
     # 送信先IDは登録した自分の1件のみ
     user_id = ENV['MY_USER_ID']
     message = {
       type: 'text',
-      text: 'testです'
+      text: push
     }
     response = client.push_message(user_id, message)
-  #end
+  end
   "OK"
 end
