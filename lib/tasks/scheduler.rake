@@ -60,6 +60,6 @@ task :update_feed => :environment do
       text: 'testです'
     }
     response = client.push_message(user_id, message)
-  end
+  #end
   "OK"
 end
