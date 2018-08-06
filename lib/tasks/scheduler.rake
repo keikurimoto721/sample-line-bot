@@ -26,7 +26,7 @@ task :update_feed => :environment do
   per18to24 = doc.elements[xpath + 'period[4]'].text
 
   # メッセージを発信する降水確率の下限値の設定
-  min_per = 0
+  min_per = 20
 
   if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
     word1 =
@@ -51,7 +51,7 @@ task :update_feed => :environment do
     end
 
     # 発信するメッセージの設定
-    push = "#{word1}\n#{word3}\n降水確率はこんな感じだよ。\n　  6〜12時　#{per06to12}％\n　12〜18時　 #{per12to18}％\n　18〜24時　#{per18to24}％\n#{word2}"
+    push = "#{word1}\n#{word3}\n降水確率はこんな感じだよ。\n　  6〜12時　#{per06to12}％\n　12〜18時　#{per12to18}％\n　18〜24時　#{per18to24}％\n#{word2}"
 
     # 送信先IDは登録した自分の1件のみ
     user_id = ENV['MY_USER_ID']
