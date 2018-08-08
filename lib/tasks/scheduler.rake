@@ -29,29 +29,9 @@ task :update_feed => :environment do
   min_per = 20
 
   if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
-    word1 =
-      ['いい朝だね！',
-       '今日もよく眠れた？',
-       '二日酔い大丈夫？',
-       '早起きしてえらいね！',
-       'いつもより起きるのちょっと遅いんじゃない？'].sample
-    word2 =
-      ['気をつけて行ってきてね(^^)',
-       '良い一日を過ごしてね(^^)',
-       '雨に負けずに今日も頑張ってね(^^)',
-       '今日も一日楽しんでいこうね(^^)',
-       '楽しいことがありますように(^^)'].sample
-
-    # 降水確率によってメッセージを変更する閾値の設定
-    mid_per = 50
-    if (per06to12.to_i >= mid_per || per12to18.to_i >= mid_per || per18to24.to_i >= mid_per)
-      word3 = '今日は雨が降りそうだから傘を忘れないでね！'
-    else
-      word3 = '今日は雨が降るかもしれないから折りたたみ傘があると安心だよ！'
-    end
 
     # 発信するメッセージの設定
-    push = "#{word1}\n#{word3}\n降水確率はこんな感じだよ。\n　  6〜12時　#{per06to12}％\n　12〜18時　#{per12to18}％\n　18〜24時　#{per18to24}％\n#{word2}"
+    push = "今日雨降るかもやで。\n  6〜12時 #{per06to12}％\n 12〜18時 #{per12to18}％\n 18〜24時 #{per18to24}％\n"
 
     # 送信先IDは登録した自分の1件のみ
     user_id = ENV['MY_USER_ID']
