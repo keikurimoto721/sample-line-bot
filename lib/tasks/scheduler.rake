@@ -26,7 +26,7 @@ task :update_feed => :environment do
   per18to24 = doc.elements[xpath + 'period[4]'].text
 
   # メッセージを発信する降水確率の下限値の設定
-  min_per = 20
+  min_per = Constants::MIN_PER
 
   if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
 
