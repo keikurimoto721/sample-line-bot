@@ -31,7 +31,7 @@ task :update_feed => :environment do
   if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
 
     # 発信するメッセージの設定
-    push = "今日雨降るかもやで。\n  6〜12時 #{per06to12}％\n 12〜18時 #{per12to18}％\n 18〜24時 #{per18to24}％\n"
+    push = "今日雨降るかもやで。\n 6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n"
 
     # 送信先IDは登録した自分の1件のみ
     user_id = ENV['MY_USER_ID']
