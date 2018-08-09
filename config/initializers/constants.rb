@@ -1,6 +1,6 @@
 module Constants
   # 降水確率の下限値
-  MIN_PER = 30
+  MIN_PER = 10
 
   # 天気予報情報提供元のURL
   WEATHER_NEWS_URL = 'https://www.drk7.jp/weather/xml/13.xml'
