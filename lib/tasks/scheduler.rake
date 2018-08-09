@@ -21,7 +21,7 @@ task :update_feed => :environment do
     user_id = ENV['MY_USER_ID']
     message = {
       type: 'text',
-      text: res_hash[:res_text]
+      text: "#{res_hash[:res_text]}\nこれは自動実行。"
     }
     response = client.push_message(user_id, message)
   end
