@@ -17,12 +17,12 @@ module LinebotHelper
     # メッセージを発信する降水確率の下限値の設定
     min_per = Constants::MIN_PER
 
-    if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
-      res_hash = {:res_code => 1,
-                  :res_text => "この道を行けばどうなるものか。\n 6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
+    res_hash = if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
+      {:res_code => 1,
+       :res_text => "この道を行けばどうなるものか。\n 6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
     else
-      res_hash = {:res_code => 0,
-                  :res_text => '案ずるでない。気にせず行け。'}
+      {:res_code => 0,
+       :res_text => '案ずるでない。気にせず行け。'}
     end
     return res_hash
   end
