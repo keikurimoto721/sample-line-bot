@@ -33,11 +33,10 @@ class LinebotController < ApplicationController
         case event.type
         when Line::Bot::Event::MessageType::Text
 
-          push = createText
-
+          res_hash = createText
           message = {
             type: 'text',
-            text: push
+            text: res_hash[:res_text]
           }
           client.reply_message(event['replyToken'], message)
         end
