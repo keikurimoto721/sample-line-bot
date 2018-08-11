@@ -22,7 +22,7 @@ module LinebotHelper
        :res_text => "傘忘れるなよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
     else
       {:res_code => 0,
-       :res_text => '多分雨降らないよ。'}
+       :res_text => "多分雨降らないよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
     end
     return res_hash
   end
