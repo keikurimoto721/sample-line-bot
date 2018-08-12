@@ -23,10 +23,10 @@ module LinebotHelper
 
     res_hash = if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
       {:res_code => 1,
-       :res_text => "傘忘れるなよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}\n最低気温 #{min_temp}℃"}
+       :res_text => "傘忘れるなよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}℃\n最低気温 #{min_temp}℃"}
     else
       {:res_code => 0,
-       :res_text => "多分雨降らないよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}\n最低気温 #{min_temp}℃"}
+       :res_text => "多分雨降らないよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}℃\n最低気温 #{min_temp}℃"}
     end
     return res_hash
   end
