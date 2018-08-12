@@ -14,15 +14,19 @@ module LinebotHelper
     per12to18 = res_doc.elements[Constants::XML_PATH_12_18].text
     per18to24 = res_doc.elements[Constants::XML_PATH_18_24].text
 
+    # 気温の取得
+    max_temp = res_doc.elements[Constants::XML_PATH_MAX].text
+    min_temp = res_doc.elements[Constants::XML_PATH_MIN].text
+
     # メッセージを発信する降水確率の下限値の設定
     min_per = Constants::MIN_PER
 
     res_hash = if (per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per)
       {:res_code => 1,
-       :res_text => "傘忘れるなよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
+       :res_text => "傘忘れるなよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}\n最低気温 #{min_temp}"}
     else
       {:res_code => 0,
-       :res_text => "多分雨降らないよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％"}
+       :res_text => "多分雨降らないよ。\n  6〜12時 #{per06to12}％\n12〜18時 #{per12to18}％\n18〜24時 #{per18to24}％\n最高気温 #{max_temp}\n最低気温 #{min_temp}"}
     end
     return res_hash
   end
