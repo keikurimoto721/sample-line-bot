@@ -9,7 +9,7 @@ module Constants
   target_area = 'area[4]'
 
   # 結果XMLにおける日付の階層
-  XML_PATH_DATE = "weatherforecast/pref/#{target_area}/info"
+  XML_PATH_DATE = "weatherforecast/pubDate"
 
   # 結果XMLにおける時間ごとの降水確率の階層
   XML_PATH_06_12 = "weatherforecast/pref/#{target_area}/info/rainfallchance/period[2]"
